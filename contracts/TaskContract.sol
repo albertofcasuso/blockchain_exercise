@@ -14,10 +14,12 @@ contract TaskContract {
 
     mapping (uint256 => Task) public tasks;
 
+    //este codigo se ejecuta al inicio del contrato
     constructor () {
         createTask("poner patatas a cocer");
     }
 
+    //funciones para crear y modificar tareas
     function createTask(string memory _description) public {
         tasks[taskCounter] = Task(taskCounter,_description, false, block.timestamp);
         taskCounter ++;
